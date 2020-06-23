@@ -2,12 +2,12 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-// let URL;
-// if (process.env.NODE_ENV === 'production') {
-//   URL = 'https://gatbsy-ecommerce-demo.netlify.com';
-// } else {
-//   URL = 'localhost:8000';
-// }
+let URL;
+if (process.env.NODE_ENV === 'production') {
+  URL = 'https://lucid-engelbart-e13bc0.netlify.app';
+} else {
+  URL = 'http://localhost:8000';
+}
 
 
 module.exports = {
@@ -22,19 +22,19 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-       spaceId: "3w5kflo1riht",
-       accessToken: "wIpdAYI35OOWUHtD2plHXM3ttteqsm0bzZIjVtK65r4",
+       spaceId: process.env.CONTENTFUL_ID,
+       accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
        },
     },
-  // {
-  //   resolve: 'gatsby-plugin-snipcart',
-  //   options: {
-  //     apiKey: process.env.SNIPCART_API,
-  //     autopop: true,
-  //     js: 'https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js',
-  //     styles: 'https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css',
-  //   },
-  // },
+    {
+      resolve: 'gatsby-plugin-snipcartv3',
+      options: {
+        apiKey: process.env.SNIPCART_API,
+        autopop: true,
+        js: 'https://cdn.snipcart.com/themes/v3.0.15/default/snipcart.js',
+        styles: 'https://cdn.snipcart.com/themes/v3.0.15/default/snipcart.css',
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

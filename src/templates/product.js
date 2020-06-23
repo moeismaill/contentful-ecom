@@ -91,16 +91,16 @@ const Product = ({ data: { item } }) => {
       <h2>{item.productName}</h2>
       <div>{item.shortDescription}</div>
       <StyledImage fluid={item.mainimage.fluid} />
-       {/* <button
+       <button
         className={`snipcart-add-item`}
         data-item-id={item.id}
         data-item-name={item.productName}
-        data-item-image={item.mainImage.fluid.src}
-        data-item-price={item.discountPrice ? item.discountPrice : item.price}
-        data-item-url={`${site.siteMetadata.siteUrl}/products/${item.productSlug}`}
+        data-item-image={item.mainimage.fluid.src}
+        data-item-price={item.discountedPrice ? item.discountedPrice : item.price}
+        data-item-url={`/products/${item.productSlug}`}
       >
         Add to Cart
-    </button> */}
+      </button>
       {/* render the rich text format description */}
       <main>{documentToReactComponents(item.description.json, options)}</main>
     </Layout>
