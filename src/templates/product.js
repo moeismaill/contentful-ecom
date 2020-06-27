@@ -46,7 +46,7 @@ const StyledImage = styled(Img)`
   height: 30rem;
   margin: 1rem;
   background-repeat: none;
-  @media  (max-width: 500px) {
+  @media  (max-width: 700px) {
     width: 100%;
     margin: 1rem 0;
     background-position: center;
