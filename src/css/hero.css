@@ -4,15 +4,15 @@
     /* height: 100%; */
     padding: 0;
     margin: 0;
-    transform: translateY(160%);
+    transform: translateY(100%);
 }
 
 .hero-text h1  {
-    color: #000000;
+    color: #fff;
 }
 
 .hero-text p  {
-    color: #000000;
+    color: #fff;
     padding: auto 3rem;
     margin: auto 3rem 1rem 3rem;
 }
@@ -28,4 +28,10 @@
 
 .hero-text button:hover  {
     opacity: .8;
+}
+
+@media only screen and (min-width: 768px) {
+    .hero-text {
+        transform: translateY(150%);
+    }
 }

@@ -45,6 +45,14 @@ const StyledImage = styled(Img)`
   width: 30rem;
   height: 30rem;
   margin: 1rem;
+  background-repeat: none;
+  @media  (max-width: 500px) {
+    width: 100%;
+    margin: 1rem 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 `;
 
 const Bold = styled.span`

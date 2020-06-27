@@ -29,7 +29,7 @@ const Hero = () => {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </p>
-                        <KeyboardArrowDownIcon className="bounce" style={{fontSize: "100px"}} />
+                        <KeyboardArrowDownIcon className="bounce" style={{fontSize: "100px", color: "white"}} />
                     </div>
                 </div>
             </div>

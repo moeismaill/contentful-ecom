@@ -5,14 +5,10 @@
     width: 100%;
 }
 
-
-
 .product-info {
     width: 50%;
     text-align: center;
 }
-
-
 
 .product-card .price {
     color: black;
@@ -56,4 +52,14 @@
 main {
     margin: 1rem;
     padding: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .product-card {
+        display: block;
+        overflow: hidden;
+    }
+    .product-info {
+        width: 100%;
+    }
 }
