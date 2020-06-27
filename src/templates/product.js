@@ -5,6 +5,8 @@ import Img from 'gatsby-image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Layout from '../components/layout';
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
+import '../css/product.css'
+
 
 
 
@@ -42,6 +44,7 @@ export const query = graphql `
 const StyledImage = styled(Img)`
   width: 30rem;
   height: 30rem;
+  margin: 1rem;
 `;
 
 const Bold = styled.span`
@@ -50,7 +53,7 @@ const Bold = styled.span`
 `;
 
 const P = styled.p`
-  color: orangered;
+  // color: orangered;
 `;
 
 const StyledHyperLink = styled.span`
@@ -88,21 +91,30 @@ const Product = ({ data: { item } }) => {
 
   return (
     <Layout>
-      <h2>{item.productName}</h2>
-      <div>{item.shortDescription}</div>
-      <StyledImage fluid={item.mainimage.fluid} />
-       <button
-        className={`snipcart-add-item`}
-        data-item-id={item.id}
-        data-item-name={item.productName}
-        data-item-image={item.mainimage.fluid.src}
-        data-item-price={item.discountedPrice ? item.discountedPrice : item.price}
-        data-item-url={`/products/${item.productSlug}`}
-      >
-        Add to Cart
-      </button>
-      {/* render the rich text format description */}
+      <div className="product-card">
+        <StyledImage fluid={item.mainimage.fluid} />
+        {/* <div> {<StyledImage fluid={item.otherImages.fluid} /> ? <StyledImage fluid={item.otherImages.fluid} /> : <StyledImage fluid={item.mainimage.fluid}/> } </div> */}
+
+        <div className="product-info">
+          <h2>{item.productName}</h2>
+          <p className="price"> {item.price}</p>
+          <p className="price"> {item.discountedPrice}</p>
+          <div className="buy">
+            <button
+              className={`snipcart-add-item`}
+              data-item-id={item.id}
+              data-item-name={item.productName}
+              data-item-image={item.mainimage.fluid.src}
+              data-item-price={item.discountedPrice ? item.discountedPrice : item.price}
+              data-item-url={`https://lucid-engelbart-e13bc0.netlify.app//products/${item.productSlug}`}
+            >
+              Add to Cart
+            </button>
+          </div>
       <main>{documentToReactComponents(item.description.json, options)}</main>
+        </div>
+      </div>
+      {/* render the rich text format description */}
     </Layout>
   );
 };

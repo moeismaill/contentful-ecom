@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Header siteTitle="Gastby Fashion Demo" />
+        <Header  />
         <Main>{children}</Main>
         <Footer />
       </ThemeProvider>
