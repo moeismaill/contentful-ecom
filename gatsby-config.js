@@ -30,7 +30,6 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-snipcartv3',
       options: {
-        id: snipcart,
         apiKey: process.env.SNIPCART_API,
         autopop: true,
         js: 'https://cdn.snipcart.com/themes/v3.0.15/default/snipcart.js',
