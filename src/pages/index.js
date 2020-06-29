@@ -4,7 +4,6 @@ import styled from '@emotion/styled';
 import Image from 'gatsby-image';
 import Layout from '../components/layout';
 import './index.css'
-import Hero from '../components/hero';
 
 export const query = graphql `
   {
@@ -42,7 +41,6 @@ const IndexPage = ({ data }) => {
   const products = data.allContentfulProduct.nodes;
   return (
     <Layout>
-      <Hero />
       <div className="products">
         {products.map(product => (
           <Link key={product.productSlug} to={`/products/${product.productSlug}`} style={{textDecoration: "none", color: "black"}}>
