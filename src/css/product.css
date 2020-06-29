@@ -1,13 +1,14 @@
 .product-card {
     display: flex;
     flex: 1;
-    margin-top: 7rem;
+    margin-top: 3rem;
     width: 100%;
 }
 
 .product-info {
     width: 50%;
     text-align: center;
+    margin-top: 1rem;
 }
 
 .product-card .price {
