@@ -35,3 +35,9 @@
         transform: translateY(150%);
     }
 }
+
+@media only screen and (max-width: 350px) {
+    .hero-text {
+        transform: translateY(50%);
+    }
+}

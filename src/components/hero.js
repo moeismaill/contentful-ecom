@@ -1,7 +1,7 @@
 import React from 'react'
 import Banner from '../images/banner.jpg'
 import '../css/hero.css'
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import { Link } from 'gatsby'
 
 const Hero = () => {
     return (
@@ -29,7 +29,7 @@ const Hero = () => {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </p>
-                        <KeyboardArrowDownIcon className="bounce" style={{fontSize: "100px", color: "white"}} />
+                        <button><Link to="/products" style={{textDecoration: "none", color: "black"}} >Shop Now</Link></button>
                     </div>
                 </div>
             </div>

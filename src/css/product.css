@@ -37,6 +37,7 @@
     cursor: pointer;
     font-size: 18px;
     margin: 1rem auto;
+    overflow: hidden;
 
     width: 55%;
     /* border-radius: 40px;  */

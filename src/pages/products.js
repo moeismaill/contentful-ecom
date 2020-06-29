@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import Image from 'gatsby-image';
+import SEO from "../components/seo"
 import Layout from '../components/layout';
 import './index.css'
-import Hero from '../components/hero';
 
 export const query = graphql `
   {
@@ -38,12 +38,12 @@ const StyledImage = styled(Image)`
 
 
 
-const IndexPage = ({ data }) => {
+const AllProducts = ({ data }) => {
   const products = data.allContentfulProduct.nodes;
   return (
     <Layout>
-      <Hero />
-      <div className="products">
+       <SEO title="products" />
+      <div className="all-products">
         {products.map(product => (
           <Link key={product.productSlug} to={`/products/${product.productSlug}`} style={{textDecoration: "none", color: "black"}}>
                 <div className="card">
@@ -51,6 +51,7 @@ const IndexPage = ({ data }) => {
                   <h4>{product.productName}</h4>
                   <p className="price"> {product.price}</p>
                   <p className="price"> {product.discountedPrice}</p>
+                  <div className="product-buy">
                     <button
                       className={`snipcart-add-item`}
                       data-item-id={product.id}
@@ -61,6 +62,7 @@ const IndexPage = ({ data }) => {
                     >
                       Add to Cart
                     </button>
+                  </div>
                 </div>
           </Link>
         ))}
@@ -69,4 +71,5 @@ const IndexPage = ({ data }) => {
   );
 };
 
-export default IndexPage
+export default AllProducts
+

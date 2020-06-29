@@ -38,3 +38,14 @@
         font-size: 1.5rem;
     }
 }
+
+@media only screen and (max-width: 350px) {
+    .navbar-logo {
+        font-size: 1.2rem;
+    }
+
+    .navbar-link a{
+        font-weight: 600;
+    }
+}
+
