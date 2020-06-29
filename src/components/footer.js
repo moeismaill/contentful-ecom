@@ -13,7 +13,7 @@ const Footer = () => {
             </ul>
           © Copyright {new Date().getFullYear()},
           {` `}
-          <a href="https://www.gatsbyjs.org">Jumpstart</a>
+          <a href="/">Jumpstart</a>
           </div>
         </footer>
     )

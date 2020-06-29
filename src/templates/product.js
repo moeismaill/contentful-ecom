@@ -114,15 +114,14 @@ const Product = ({ data: { item } }) => {
               data-item-name={item.productName}
               data-item-image={item.mainimage.fluid.src}
               data-item-price={item.discountedPrice ? item.discountedPrice : item.price}
-              data-item-url={`https://lucid-engelbart-e13bc0.netlify.app//products/${item.productSlug}`}
+              data-item-url={`https://lucid-engelbart-e13bc0.netlify.app/${item.productSlug}`}
             >
               Add to Cart
             </button>
           </div>
-      <main>{documentToReactComponents(item.description.json, options)}</main>
+          <main>{documentToReactComponents(item.description.json, options)}</main>
         </div>
       </div>
-      {/* render the rich text format description */}
     </Layout>
   );
 };

@@ -51,6 +51,18 @@ const IndexPage = ({ data }) => {
                   <h4>{product.productName}</h4>
                   <p className="price"> {product.price}</p>
                   <p className="price"> {product.discountedPrice}</p>
+                  <div className="product-buy">
+                    <button
+                      className={`snipcart-add-item`}
+                      data-item-id={product.id}
+                      data-item-name={product.productName}
+                      data-item-image={product.mainimage.fluid.src}
+                      data-item-price={product.discountedPrice ? product.discountedPrice : product.price}
+                      data-item-url={`https://lucid-engelbart-e13bc0.netlify.app/${product.productSlug}`}
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
                 </div>
           </Link>
         ))}
